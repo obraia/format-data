@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Format Data</title>
+
+	<meta charset="utf-8">
+
+	<script src="formatDate.js"></script>
+
+	<script type="text/javascript">
+
+		function setDate(value){
+
+			const type1 = document.getElementById('type-1');
+			const type2 = document.getElementById('type-2');
+			const type3 = document.getElementById('type-3');
+			const type4 = document.getElementById('type-4');
+			const type5 = document.getElementById('type-5');
+			const type6 = document.getElementById('type-6');
+
+			type1.textContent = FormatDate(value, 'yyyy-mm-dd');
+			type2.textContent = FormatDate(value, 'dd-mm-yyyy');
+			type3.textContent = FormatDate(value, 'mm-dd-yyyy');
+
+			type4.textContent = FormatDate(value, 'yyyy/mm/dd');
+			type5.textContent = FormatDate(value, 'dd/mm/yyyy');
+			type6.textContent = FormatDate(value, 'mm/dd/yyyy');
+
+			const newIputDate = document.getElementById('new-iput');
+
+			newIputDate.value = FormatDate(value, 'yyyy-mm-dd');
+		}
+		
+	</script>
+
+</head>
+
+	<body>
+
+		<input type="date" name="" id="date" onchange="setDate(this.value)">
+
+		<h4>Tipo yyyy-mm-dd: <span id="type-1"></span> </h4>
+		<h4>Tipo dd-mm-yyyy: <span id="type-2"></span> </h4>
+		<h4>Tipo mm-dd-yyyy: <span id="type-3"></span> </h4>
+		<h4>Tipo yyyy/mm/dd: <span id="type-4"></span> </h4>
+		<h4>Tipo dd/mm/yyyy: <span id="type-5"></span> </h4>
+		<h4>Tipo mm/dd/yyyy: <span id="type-6"></span> </h4>
+
+		<!-- Input type date is yyyy-mm-dd -->
+
+		<input type="date" id="new-iput" disabled="">
+
+	</body>
+
+</html>
